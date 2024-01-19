@@ -1,0 +1,180 @@
+/* Reset básico para estilos y padding para una base consistente en todos los navegadores */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo del cuerpo del documento */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: large;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Estilos del encabezado con fuente serif para un look distintivo */
+header {
+  background: #1b1b1b;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+
+/* Espacio principal que contiene la mayoría del contenido, con un ancho máximo para evitar líneas de texto demasiado largas */
+main {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Estilos para la sección de noticias con énfasis en los títulos */
+.content h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.content p {
+  margin-bottom: 1.5em;
+}
+
+#imagenPrincipal {
+  display: block; /* La imagen se muestra como bloque */
+  max-width: 70%; /* La imagen nunca superará el ancho de su contenedor */
+  height: auto; /* La altura se ajusta manteniendo la proporción de aspecto */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
+}
+/* CSS para hacer el video responsivo y centrado */
+.video-container {
+  display: flex;
+  justify-content: center; /* Centra el video horizontalmente */
+  align-items: center; /* Centra el video verticalmente si es necesario */
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  position: relative;
+  height: 0;
+  width: 100%; /* Puedes ajustar el ancho según prefieras */
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 20px;
+}
+
+ul li {
+  background: url('bullet.png') no-repeat left center;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  word-wrap: break-word; /* Asegura que las palabras se rompan correctamente */
+}
+
+ul li::before {
+  content: '• ';
+  color: #333;
+  font-weight: bold;
+  display: inline-block;
+  width: 20px;
+  margin-left: -20px;
+}
+
+/* Estilos para los artículos con un diseño flexible para adaptarse a la dirección del contenido */
+article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 800px;
+  padding-top: 30px;
+  margin: 20px 0;
+}
+
+/* Imágenes redondas para perfiles o iconos con tamaño fijo y ajuste de imagen */
+article img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+/* Asegura que los títulos y párrafos dentro de los artículos no tengan márgenes adicionales */
+article h3, article p {
+  margin: 0;
+  padding: 0 8px;
+}
+
+/* Estilo del pie de página con colores consistentes con el encabezado y centrado de texto */
+footer {
+  background: #1b1b1b;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+}
+
+/* Estilo de enlaces en el pie de página para una experiencia de usuario coherente */
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+}
+
+/* Media queries para ajustes responsivos, mejorando la legibilidad y uso del espacio en diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+  article {
+    width: 100%; /* Hace que la tabla ocupe el ancho completo */
+    font-size: 12px; /* Reduce el tamaño del texto para que se ajuste mejor */
+    overflow-x: auto; /* Permite desplazarse horizontalmente si es necesario */
+}
+  /* Cambia la disposición de los artículos a vertical y centra el contenido */
+  article {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Reduce el tamaño de fuente para mejorar la legibilidad en dispositivos pequeños */
+  body {
+    font-size: 14px;
+  }
+  #imagenPrincipal {
+    max-width: 100%;
+  }
+
+  /* Ajustes de tamaño y margen para las imágenes y texto dentro de los artículos */
+  article img {
+    margin-bottom: 10px;
+  }
+  article h3, article p {
+    margin: 0 0 5px 0;
+  }
+}
